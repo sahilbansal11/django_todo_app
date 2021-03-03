@@ -22,14 +22,17 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 # SECRET_KEY = '46)hcfzcny)e5jx+ng+8#8fp8f#q3dyaqd)d#)b3=ug#t=-#=m'
-SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', '46)hcfzcny)e5jx+ng+8#8fp8f#q3dyaqd)d#)b3=ug#t=-#=m')
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = True
 DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
 
-ALLOWED_HOSTS = ['*']
+# set DJANGO_DEBUG = True in dev environment
+# set DJANGO_DEBUG = False in prod environment
 
+# where can we access the server
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 
